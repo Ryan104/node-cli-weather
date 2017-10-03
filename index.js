@@ -18,9 +18,12 @@ prompt.get(['state', 'city'], function(err, result){
 
 	request(url, function (error, response, body) {
 	  try {
+
 	  	let data = JSON.parse(body).current_observation;
+	  	
 	  	console.log('The weather in ' + data.display_location.full +' is ' + data.weather);
 	  	console.log('The temp is ' + data.temp_f);
+
 	  } catch(e) {
 	  	console.log('error: ' + e);
 	  }
